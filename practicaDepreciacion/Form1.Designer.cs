@@ -28,144 +28,391 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEnviar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
-            this.txtValorR = new System.Windows.Forms.TextBox();
-            this.txtVidaU = new System.Windows.Forms.TextBox();
-            this.Nombre = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtAU = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtValorR = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtValor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dgvActivos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ActivoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorResidual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsOption = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.depreciacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnEnviar = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).BeginInit();
+            this.cmsOption.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtEnviar
-            // 
-            this.txtEnviar.Location = new System.Drawing.Point(107, 255);
-            this.txtEnviar.Name = "txtEnviar";
-            this.txtEnviar.Size = new System.Drawing.Size(75, 23);
-            this.txtEnviar.TabIndex = 0;
-            this.txtEnviar.Text = "Enviar";
-            this.txtEnviar.UseVisualStyleBackColor = true;
-            this.txtEnviar.Click += new System.EventHandler(this.txtEnviar_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(122, 43);
+            this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtNombre.BorderRadius = 13;
+            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombre.DefaultText = "";
+            this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombre.Location = new System.Drawing.Point(21, 115);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            this.txtNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyUp);
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.PlaceholderText = "Nombre";
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.Size = new System.Drawing.Size(181, 36);
+            this.txtNombre.TabIndex = 0;
             // 
-            // txtValor
+            // txtAU
             // 
-            this.txtValor.Location = new System.Drawing.Point(122, 89);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
-            this.txtValor.TabIndex = 2;
-            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress_1);
+            this.txtAU.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtAU.BorderRadius = 13;
+            this.txtAU.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAU.DefaultText = "";
+            this.txtAU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAU.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAU.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtAU.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAU.Location = new System.Drawing.Point(21, 320);
+            this.txtAU.Name = "txtAU";
+            this.txtAU.PasswordChar = '\0';
+            this.txtAU.PlaceholderText = "Años útil";
+            this.txtAU.SelectedText = "";
+            this.txtAU.Size = new System.Drawing.Size(181, 36);
+            this.txtAU.TabIndex = 3;
             // 
             // txtValorR
             // 
-            this.txtValorR.Location = new System.Drawing.Point(122, 136);
+            this.txtValorR.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtValorR.BorderRadius = 13;
+            this.txtValorR.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtValorR.DefaultText = "";
+            this.txtValorR.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtValorR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtValorR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValorR.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValorR.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtValorR.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtValorR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValorR.Location = new System.Drawing.Point(21, 243);
             this.txtValorR.Name = "txtValorR";
-            this.txtValorR.Size = new System.Drawing.Size(100, 20);
-            this.txtValorR.TabIndex = 3;
-            this.txtValorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorR_KeyPress);
+            this.txtValorR.PasswordChar = '\0';
+            this.txtValorR.PlaceholderText = "Valor residual";
+            this.txtValorR.SelectedText = "";
+            this.txtValorR.Size = new System.Drawing.Size(181, 36);
+            this.txtValorR.TabIndex = 2;
             // 
-            // txtVidaU
+            // txtValor
             // 
-            this.txtVidaU.Location = new System.Drawing.Point(122, 177);
-            this.txtVidaU.Name = "txtVidaU";
-            this.txtVidaU.Size = new System.Drawing.Size(100, 20);
-            this.txtVidaU.TabIndex = 4;
-            this.txtVidaU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVidaU_KeyPress);
+            this.txtValor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtValor.BorderRadius = 13;
+            this.txtValor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtValor.DefaultText = "";
+            this.txtValor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtValor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtValor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtValor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtValor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValor.Location = new System.Drawing.Point(21, 176);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.PasswordChar = '\0';
+            this.txtValor.PlaceholderText = "Valor";
+            this.txtValor.SelectedText = "";
+            this.txtValor.Size = new System.Drawing.Size(181, 36);
+            this.txtValor.TabIndex = 1;
+            // 
+            // dgvActivos
+            // 
+            this.dgvActivos.AllowUserToAddRows = false;
+            this.dgvActivos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvActivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvActivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvActivos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvActivos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvActivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvActivos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvActivos.ColumnHeadersHeight = 59;
+            this.dgvActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActivoId,
+            this.Nombre,
+            this.Valor,
+            this.ValorResidual,
+            this.Age});
+            this.dgvActivos.ContextMenuStrip = this.cmsOption;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvActivos.EnableHeadersVisualStyles = false;
+            this.dgvActivos.GridColor = System.Drawing.Color.White;
+            this.dgvActivos.Location = new System.Drawing.Point(227, 38);
+            this.dgvActivos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvActivos.Name = "dgvActivos";
+            this.dgvActivos.ReadOnly = true;
+            this.dgvActivos.RowHeadersVisible = false;
+            this.dgvActivos.RowHeadersWidth = 62;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvActivos.RowTemplate.DividerHeight = 2;
+            this.dgvActivos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvActivos.Size = new System.Drawing.Size(602, 394);
+            this.dgvActivos.TabIndex = 6;
+            this.dgvActivos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvActivos.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvActivos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvActivos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvActivos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvActivos.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvActivos.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.dgvActivos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvActivos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvActivos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvActivos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvActivos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvActivos.ThemeStyle.HeaderStyle.Height = 59;
+            this.dgvActivos.ThemeStyle.ReadOnly = true;
+            this.dgvActivos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvActivos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvActivos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvActivos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvActivos.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvActivos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvActivos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvActivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivos_CellContentClick);
+            // 
+            // ActivoId
+            // 
+            this.ActivoId.FillWeight = 60F;
+            this.ActivoId.HeaderText = "ID";
+            this.ActivoId.MinimumWidth = 6;
+            this.ActivoId.Name = "ActivoId";
+            this.ActivoId.ReadOnly = true;
             // 
             // Nombre
             // 
-            this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(57, 43);
+            this.Nombre.FillWeight = 150F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(44, 13);
-            this.Nombre.TabIndex = 5;
-            this.Nombre.Text = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
-            // label2
+            // Valor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             // 
-            // label3
+            // ValorResidual
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Valor residual";
+            this.ValorResidual.HeaderText = "Valor residual";
+            this.ValorResidual.MinimumWidth = 6;
+            this.ValorResidual.Name = "ValorResidual";
+            this.ValorResidual.ReadOnly = true;
             // 
-            // label4
+            // Age
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Vida util";
+            this.Age.HeaderText = "Años";
+            this.Age.MinimumWidth = 6;
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
             // 
-            // dataGridView1
+            // cmsOption
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(282, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 235);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.cmsOption.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.depreciacionesToolStripMenuItem,
+            this.actualizarToolStripMenuItem,
+            this.borrarToolStripMenuItem});
+            this.cmsOption.Name = "cmsOption";
+            this.cmsOption.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.cmsOption.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.cmsOption.RenderStyle.ColorTable = null;
+            this.cmsOption.RenderStyle.RoundedEdges = true;
+            this.cmsOption.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.cmsOption.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.cmsOption.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.cmsOption.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.cmsOption.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.cmsOption.Size = new System.Drawing.Size(181, 76);
+            // 
+            // depreciacionesToolStripMenuItem
+            // 
+            this.depreciacionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.depreciacionesToolStripMenuItem.Name = "depreciacionesToolStripMenuItem";
+            this.depreciacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.depreciacionesToolStripMenuItem.Text = "Depreciaciones";
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 15;
+            this.guna2Elipse1.TargetControl = this.dgvActivos;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.ResizeForm = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(809, 5);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.TabIndex = 7;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // guna2ImageButton2
+            // 
+            this.guna2ImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
+            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton2.ImageRotate = 0F;
+            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(778, 5);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton2.TabIndex = 8;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.btnEnviar.BorderRadius = 13;
+            this.btnEnviar.BorderThickness = 2;
+            this.btnEnviar.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEnviar.FillColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEnviar.ForeColor = System.Drawing.Color.Silver;
+            this.btnEnviar.Location = new System.Drawing.Point(37, 386);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.PressedColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.Size = new System.Drawing.Size(139, 46);
+            this.btnEnviar.TabIndex = 9;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Nombre);
-            this.Controls.Add(this.txtVidaU);
-            this.Controls.Add(this.txtValorR);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(842, 464);
+            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.guna2ImageButton2);
+            this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtValorR);
+            this.Controls.Add(this.txtAU);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtEnviar);
+            this.Controls.Add(this.dgvActivos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).EndInit();
+            this.cmsOption.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button txtEnviar;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.TextBox txtValorR;
-        private System.Windows.Forms.TextBox txtVidaU;
-        private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2TextBox txtNombre;
+        private Guna.UI2.WinForms.Guna2TextBox txtAU;
+        private Guna.UI2.WinForms.Guna2TextBox txtValorR;
+        private Guna.UI2.WinForms.Guna2TextBox txtValor;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvActivos;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorResidual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2Button btnEnviar;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip cmsOption;
+        private System.Windows.Forms.ToolStripMenuItem depreciacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
     }
 }
 

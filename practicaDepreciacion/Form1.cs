@@ -15,108 +15,54 @@ namespace practicaDepreciacion
     public partial class Form1 : Form
     {
         IActivoServices activoServices;
+        private int Seleccionado = -1;
         public Form1(IActivoServices ActivoServices)
         {
             this.activoServices = ActivoServices;
             InitializeComponent();
         }
 
-        private void txtNombre_KeyUp(object sender, KeyEventArgs e)
-        {
-           
-        }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("No se puede numeros");
-            }
-        }
-
-    
-
-        private void txtValor_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("No se puede LETRAS");
-            }
-        }
-
-        private void txtValorR_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("No se puede LETRAS");
-            }
-        }
-
-        private void txtVidaU_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("No se puede LETRAS");
-            }
-        }
-
-        private void txtEnviar_Click(object sender, EventArgs e)
-        {
-            bool verificado = verificar();
-            if (verificado == false)
-            {
-                MessageBox.Show("Tienes que llenar todos los formularios.");
-            }
-            else
-            {
-
-                Activo activo = new Activo()
-                {
-                    Nombre = txtNombre.Text,
-                    Valor = double.Parse(txtValor.Text),
-                    ValorResidual=double.Parse(txtValorR.Text),
-                    VidaUtil= int.Parse(txtVidaU.Text)
-                };
-                activoServices.Add(activo);
-                dataGridView1.DataSource = null;
-                limpiar();
-                dataGridView1.DataSource = activoServices.Read();
-
-            }
-        }
-        private bool verificar()
-        {
-            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtValor.Text) || String.IsNullOrEmpty(txtVidaU.Text) || String.IsNullOrEmpty(txtValorR.Text))
-            {
-              
-                return false;
-            }
-            return true;
-        }
-        private void limpiar()
-        {
-            this.txtNombre.Text = String.Empty;
-            this.txtValor.Text = String.Empty;
-            this.txtValorR.Text = String.Empty;
-            this.txtVidaU.Text = String.Empty;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                FrmDepreciacion depreciacion = new FrmDepreciacion(activoServices.Read()[e.RowIndex]);
-                depreciacion.ShowDialog();
-            }
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = activoServices.Read();
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvActivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Seleccionado = int.Parse(dgvActivos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                MessageBox.Show(Seleccionado.ToString());
+            }
+        }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Seleccionado != -1)
+            {
+                
+            }
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            dgvActivos.Rows.Add(txtNombre.Text, txtValor.Text);
+            dgvActivos.Update();
+     
+            
         }
     }
 }
