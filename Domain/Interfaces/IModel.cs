@@ -10,6 +10,7 @@ namespace Domain.Interfaces
     {
         void Add(T t);
         void Delete(T t);
+        bool Delete(int id);
         List<T> Read();
 
     }

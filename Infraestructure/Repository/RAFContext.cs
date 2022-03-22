@@ -15,13 +15,17 @@ namespace Infraestructure.Repository
     {
         private string fileName;
         private int size;
+        private int NumberEliminated;
 
         public RAFContext(string fileName, int size)
         {
             this.fileName = fileName;
             this.size = size;
         }
-
+        private Stream Eliminated
+        {
+            get => File.Open("Eliminated.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        }
         public Stream HeaderStream
         {
             get => File.Open($"{fileName}.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -116,6 +120,7 @@ namespace Infraestructure.Repository
                         bwHeader.Write(++n);
                         bwHeader.Write(k);
                     }
+                    
                 }
             }
             catch (IOException)
@@ -127,8 +132,8 @@ namespace Infraestructure.Repository
         public T Get<T>(int id)
         {
             try
-            {
-
+             {
+           
                 T newValue = (T)Activator.CreateInstance(typeof(T));
                 using (BinaryReader brHeader = new BinaryReader(HeaderStream),
                                     brData = new BinaryReader(DataStream))
@@ -148,7 +153,10 @@ namespace Infraestructure.Repository
                         return default(T);
                     }
                     PropertyInfo[] properties = newValue.GetType().GetProperties();
+
+             
                     long posh = 8 + (id - 1) * 4;
+            
                     //TODO Add Binary search to find the id
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                     int index = brHeader.ReadInt32();
@@ -213,7 +221,7 @@ namespace Infraestructure.Repository
         }
         public void Update<T>(T t)
         {
-            int Id = (int)t.GetType().GetProperty("Id").GetValue(t);
+            int Id = int.Parse(t.GetType().GetProperty("Id").GetValue(t).ToString());
 
             using (BinaryReader brHeader = new BinaryReader(HeaderStream),
                                 brData = new BinaryReader(DataStream))
@@ -229,14 +237,19 @@ namespace Infraestructure.Repository
                 n = brHeader.ReadInt32();
                 k = brHeader.ReadInt32();
 
+                long posh = 8 + (Id - 1) * 4;
+                brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                long index = brHeader.ReadInt32();
+                long posd = (index - 1) * size;
+                brData.Close();
+                brHeader.Close();
                 using (BinaryWriter binaryHeader = new BinaryWriter(HeaderStream),
                                    binaryData = new BinaryWriter(DataStream))
                 {
                     PropertyInfo[] propertyInfo = t.GetType().GetProperties();
-                    long posh = 8 + (Id - 1) * 4;
-                    brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                    long index = brHeader.ReadInt32();
-                    long posd = (index - 1) * size;
+                   
+                  
+                    
                     binaryData.BaseStream.Seek(posd, SeekOrigin.Begin);
                     foreach (PropertyInfo pinfo in propertyInfo)
                     {
@@ -283,6 +296,61 @@ namespace Infraestructure.Repository
                 }
             }
         }
+        public bool Delete(int id)
+        {
+            using(BinaryReader brHeader=new BinaryReader(HeaderStream))
+            {
+                int n, k;
+                brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                if (brHeader.BaseStream.Length == 0)
+                {
+                    n = 0;
+                    k = 0;
+                    return false;
+                }
+                n = brHeader.ReadInt32();
+                k = brHeader.ReadInt32();
+                if (id <= 0 || id > k)
+                {
+                    return false;
+                }
+                long positionInitial = 8 + (id - 1) * 4;
+                long positionFinal = 8 + (id * 4);
+                using(BinaryWriter brHeaderTemp=new BinaryWriter(File.Open("Temp.txt",FileMode.Create,FileAccess.ReadWrite)))
+                {
+                    long length = brHeader.BaseStream.Length;
+                    brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                    while (brHeader.BaseStream.Position < length)
+                    {
+                       
+                        if (brHeader.BaseStream.Position == positionInitial)
+                        {
+                            brHeaderTemp.Write(-1);
+                            brHeader.BaseStream.Position = brHeader.BaseStream.Position + 4;
+                        }
+                        else
+                        {
+                            brHeaderTemp.Write(brHeader.ReadInt32());
+                        }
+                       
+                    }
+                    brHeaderTemp.BaseStream.Seek(0, SeekOrigin.Begin);
+                    brHeaderTemp.Write(n);
+                    brHeaderTemp.Write(k);
+                    
+                }
+            }
+            using(BinaryWriter binaryWriter=new BinaryWriter(Eliminated))
+            {
+         
+                binaryWriter.Write(++NumberEliminated);
+                binaryWriter.Close();
+            }
+            File.Delete($"{fileName}.hd");
+            File.Copy("Temp.txt", $"{fileName}.hd");
+            return true;
+
+        }
         public List<T> GetAll<T>()
         {
             List<T> listT = new List<T>();
@@ -297,15 +365,32 @@ namespace Infraestructure.Repository
                 n = brHeader.ReadInt32();
                 k = brHeader.ReadInt32();
             }
-
+            using (BinaryReader binaryReader=new BinaryReader(Eliminated))
+            {
+                binaryReader.BaseStream.Seek(0, SeekOrigin.Begin);
+                if (binaryReader.BaseStream.Length == 0)
+                {
+                    NumberEliminated = 0;
+                }
+                else
+                {
+                    NumberEliminated = binaryReader.ReadInt32();
+                }
+                
+            }
             for (int i = 0; i < n; i++)
             {
                 int index;
                 using (BinaryReader brHeader = new BinaryReader(HeaderStream))
                 {
+
                     long posh = 8 + i * 4;
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                     index = brHeader.ReadInt32();
+                    if (index == -1)
+                    {
+                        continue;
+                    }
                 }
 
                 T t = Get<T>(index);

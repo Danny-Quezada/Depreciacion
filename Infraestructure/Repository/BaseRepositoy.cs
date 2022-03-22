@@ -24,6 +24,11 @@ namespace Infraestructure.Repository
             data.Remove(t);
         }
 
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<T> Read()
         {
             return data;

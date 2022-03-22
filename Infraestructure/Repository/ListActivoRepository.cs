@@ -26,5 +26,10 @@ namespace Infraestructure.Repository
             //}
             //return null;
         }
+
+        public void Update(Activo activo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

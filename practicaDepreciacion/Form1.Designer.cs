@@ -77,6 +77,7 @@
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(181, 36);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtAU
             // 
@@ -98,6 +99,7 @@
             this.txtAU.SelectedText = "";
             this.txtAU.Size = new System.Drawing.Size(181, 36);
             this.txtAU.TabIndex = 3;
+            this.txtAU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAU_KeyPress);
             // 
             // txtValorR
             // 
@@ -119,6 +121,7 @@
             this.txtValorR.SelectedText = "";
             this.txtValorR.Size = new System.Drawing.Size(181, 36);
             this.txtValorR.TabIndex = 2;
+            this.txtValorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorR_KeyPress);
             // 
             // txtValor
             // 
@@ -140,6 +143,7 @@
             this.txtValor.SelectedText = "";
             this.txtValor.Size = new System.Drawing.Size(181, 36);
             this.txtValor.TabIndex = 1;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // dgvActivos
             // 
@@ -272,20 +276,21 @@
             this.cmsOption.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsOption.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.cmsOption.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.cmsOption.Size = new System.Drawing.Size(181, 76);
+            this.cmsOption.Size = new System.Drawing.Size(181, 92);
             // 
             // depreciacionesToolStripMenuItem
             // 
             this.depreciacionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.depreciacionesToolStripMenuItem.Name = "depreciacionesToolStripMenuItem";
-            this.depreciacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.depreciacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.depreciacionesToolStripMenuItem.Text = "Depreciaciones";
+            this.depreciacionesToolStripMenuItem.Click += new System.EventHandler(this.depreciacionesToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
@@ -293,8 +298,9 @@
             // 
             this.borrarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
             // guna2Elipse1
             // 

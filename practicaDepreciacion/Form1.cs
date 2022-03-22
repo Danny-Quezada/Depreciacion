@@ -26,7 +26,7 @@ namespace practicaDepreciacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            FillDgv();
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -45,7 +45,10 @@ namespace practicaDepreciacion
             if (e.RowIndex >= 0)
             {
                 Seleccionado = int.Parse(dgvActivos.Rows[e.RowIndex].Cells[0].Value.ToString());
-                MessageBox.Show(Seleccionado.ToString());
+            }
+            else
+            {
+                cmsOption.Visible = false;
             }
         }
 
@@ -53,16 +56,115 @@ namespace practicaDepreciacion
         {
             if (Seleccionado != -1)
             {
-                
+                FrmUpdate frmUpdate = new FrmUpdate(Seleccionado);
+                frmUpdate.services = activoServices;
+                frmUpdate.ShowDialog();
+                FillDgv();
+            }
+            else
+            {
+                cmsOption.Visible = false;
             }
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            dgvActivos.Rows.Add(txtNombre.Text, txtValor.Text);
-            dgvActivos.Update();
-     
-            
+            if (String.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtValor.Text)||string.IsNullOrEmpty(txtValorR.Text)|| string.IsNullOrEmpty(txtAU.Text))
+            {
+                MessageBox.Show("Rellene todo el formulario, por favor.","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                Activo activo = new Activo
+                {
+                    Nombre=txtNombre.Text,
+                    Valor=double.Parse(txtValor.Text),
+                    ValorResidual=double.Parse(txtValorR.Text),
+                    VidaUtil=int.Parse(txtAU.Text)
+                };
+                activoServices.Add(activo);
+                FillDgv();
+                clearTxt();
+            }
+
+
+        }
+        private void clearTxt()
+        {
+            txtAU.Clear();
+            txtNombre.Clear();
+            txtValor.Clear();
+            txtValorR.Clear();
+        }
+        private void FillDgv()
+        {
+            dgvActivos.Rows.Clear();
+
+            foreach(Activo activo in activoServices.Read())
+            {
+                dgvActivos.Rows.Add(activo.Id,activo.Nombre,activo.Valor,activo.ValorResidual,activo.VidaUtil);
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+
+                MessageBox.Show("NO SE PUEDEN LETRAS");
+
+            }
+        }
+
+        private void txtValorR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+
+                MessageBox.Show("NO SE PUEDEN LETRAS");
+
+            }
+        }
+
+        private void txtAU_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+
+                MessageBox.Show("NO SE PUEDEN LETRAS");
+
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+
+                MessageBox.Show("NO SE PUEDEN NUMEROS");
+
+            }
+        }
+
+        private void depreciacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Seleccionado != -1)
+            {
+                activoServices.Delete(Seleccionado);
+                FillDgv();
+                Seleccionado = -1;
+            }
+           
         }
     }
 }

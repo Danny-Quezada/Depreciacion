@@ -46,6 +46,11 @@ namespace Infraestructure.Repository
             throw new NotImplementedException();
         }
 
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Activo GetById(int id)
         {
             throw new NotImplementedException();
@@ -82,6 +87,11 @@ namespace Infraestructure.Repository
                 throw;
             }
 
+        }
+
+        public void Update(Activo activo)
+        {
+            throw new NotImplementedException();
         }
     }
 }

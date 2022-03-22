@@ -94,7 +94,7 @@ namespace practicaDepreciacion
             this.lblActualizar.ForeColor = System.Drawing.Color.Silver;
             this.lblActualizar.Location = new System.Drawing.Point(98, 55);
             this.lblActualizar.Name = "lblActualizar";
-            this.lblActualizar.Size = new System.Drawing.Size(168, 45);
+            this.lblActualizar.Size = new System.Drawing.Size(139, 37);
             this.lblActualizar.TabIndex = 16;
             this.lblActualizar.Text = "Actualizar";
             // 
@@ -118,6 +118,7 @@ namespace practicaDepreciacion
             this.txtValor.SelectedText = "";
             this.txtValor.Size = new System.Drawing.Size(181, 36);
             this.txtValor.TabIndex = 1;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // txtValorR
             // 
@@ -139,6 +140,7 @@ namespace practicaDepreciacion
             this.txtValorR.SelectedText = "";
             this.txtValorR.Size = new System.Drawing.Size(181, 36);
             this.txtValorR.TabIndex = 2;
+            this.txtValorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorR_KeyPress);
             // 
             // txtAU
             // 
@@ -160,6 +162,7 @@ namespace practicaDepreciacion
             this.txtAU.SelectedText = "";
             this.txtAU.Size = new System.Drawing.Size(181, 36);
             this.txtAU.TabIndex = 3;
+            this.txtAU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAU_KeyPress);
             // 
             // txtNombre
             // 
@@ -181,6 +184,7 @@ namespace practicaDepreciacion
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(181, 36);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // FrmUpdate
             // 

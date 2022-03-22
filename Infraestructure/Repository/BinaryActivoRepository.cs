@@ -51,5 +51,15 @@ namespace Infraestructure.Repository
         {
             return context.GetAll<Activo>();
         }
+
+        public void Update(Activo activo)
+        {
+            context.Update<Activo>(activo);
+        }
+
+        public bool Delete(int id)
+        {
+            return context.Delete(id);
+        }
     }
 }
