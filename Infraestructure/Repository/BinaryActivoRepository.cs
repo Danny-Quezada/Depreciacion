@@ -12,7 +12,7 @@ namespace Infraestructure.Repository
     public class BinaryActivoRepository : IActivoModel
     {
         private RAFContext context;
-        private const int SIZE = 119;
+        private const int SIZE = 433;
         public BinaryActivoRepository()
         {
             context = new RAFContext("activo", 119);

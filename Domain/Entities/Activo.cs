@@ -13,7 +13,10 @@ namespace Domain.Entities
         public String Nombre { get; set; }
         public double Valor { get; set; }
         public int VidaUtil { get; set; }
-        public double ValorResidual { get; set; }       
+        public double ValorResidual { get; set; }     
+        public String Codigo { get; set; }
+        public Empleado Empleado { get; set; }
+        public EstadoActivo Estado { get; set; }
 
     }
 }

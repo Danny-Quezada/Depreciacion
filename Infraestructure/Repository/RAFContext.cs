@@ -26,6 +26,7 @@ namespace Infraestructure.Repository
         {
             get => File.Open("Eliminated.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite);
         }
+        
         public Stream HeaderStream
         {
             get => File.Open($"{fileName}.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -438,5 +439,6 @@ namespace Infraestructure.Repository
                 throw;
             }
         }
+           
     }
 }

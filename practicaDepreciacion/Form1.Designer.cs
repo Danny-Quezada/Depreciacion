@@ -70,7 +70,7 @@
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(21, 115);
+            this.txtNombre.Location = new System.Drawing.Point(12, 144);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "Nombre";
@@ -92,7 +92,7 @@
             this.txtAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtAU.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAU.Location = new System.Drawing.Point(21, 320);
+            this.txtAU.Location = new System.Drawing.Point(12, 349);
             this.txtAU.Name = "txtAU";
             this.txtAU.PasswordChar = '\0';
             this.txtAU.PlaceholderText = "Años útil";
@@ -114,7 +114,7 @@
             this.txtValorR.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtValorR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValorR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValorR.Location = new System.Drawing.Point(21, 243);
+            this.txtValorR.Location = new System.Drawing.Point(12, 272);
             this.txtValorR.Name = "txtValorR";
             this.txtValorR.PasswordChar = '\0';
             this.txtValorR.PlaceholderText = "Valor residual";
@@ -136,7 +136,7 @@
             this.txtValor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtValor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValor.Location = new System.Drawing.Point(21, 176);
+            this.txtValor.Location = new System.Drawing.Point(12, 205);
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
             this.txtValor.PlaceholderText = "Valor";
@@ -197,7 +197,7 @@
             this.dgvActivos.RowTemplate.DividerHeight = 2;
             this.dgvActivos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvActivos.Size = new System.Drawing.Size(602, 394);
+            this.dgvActivos.Size = new System.Drawing.Size(602, 472);
             this.dgvActivos.TabIndex = 6;
             this.dgvActivos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvActivos.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -276,13 +276,13 @@
             this.cmsOption.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsOption.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.cmsOption.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.cmsOption.Size = new System.Drawing.Size(181, 92);
+            this.cmsOption.Size = new System.Drawing.Size(155, 70);
             // 
             // depreciacionesToolStripMenuItem
             // 
             this.depreciacionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.depreciacionesToolStripMenuItem.Name = "depreciacionesToolStripMenuItem";
-            this.depreciacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.depreciacionesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.depreciacionesToolStripMenuItem.Text = "Depreciaciones";
             this.depreciacionesToolStripMenuItem.Click += new System.EventHandler(this.depreciacionesToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@
             // 
             this.actualizarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
@@ -298,7 +298,7 @@
             // 
             this.borrarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
@@ -365,7 +365,7 @@
             this.btnEnviar.FillColor = System.Drawing.Color.Transparent;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEnviar.ForeColor = System.Drawing.Color.Silver;
-            this.btnEnviar.Location = new System.Drawing.Point(37, 386);
+            this.btnEnviar.Location = new System.Drawing.Point(28, 415);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.PressedColor = System.Drawing.Color.Transparent;
             this.btnEnviar.Size = new System.Drawing.Size(139, 46);
@@ -378,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(842, 464);
+            this.ClientSize = new System.Drawing.Size(842, 542);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.guna2ImageButton2);
             this.Controls.Add(this.guna2ImageButton1);

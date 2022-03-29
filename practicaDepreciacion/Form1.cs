@@ -15,10 +15,12 @@ namespace practicaDepreciacion
     public partial class Form1 : Form
     {
         IActivoServices activoServices;
+        IEmpleadoServices EmpleadoServices;
         private int Seleccionado = -1;
-        public Form1(IActivoServices ActivoServices)
+        public Form1(IActivoServices ActivoServices,IEmpleadoServices CEmpleadoServices)
         {
             this.activoServices = ActivoServices;
+            this.EmpleadoServices = CEmpleadoServices;
             InitializeComponent();
         }
 

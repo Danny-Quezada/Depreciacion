@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IActivoModel: IModel<Activo>
+    public interface IEmpleadoModel: IModel<Empleado>
     {
-        Activo GetById(int id);
-        void Update(Activo activo);
-
-       
+        Empleado GetById(int id);
+        void Update(Empleado Empleado);
+        
     }
 }
