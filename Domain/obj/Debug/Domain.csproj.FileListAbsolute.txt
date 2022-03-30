@@ -21,3 +21,11 @@ C:\Users\JADPA18\Desktop\Depreciacion\Domain\obj\Debug\Domain.csprojAssemblyRefe
 C:\Users\JADPA18\Desktop\Depreciacion\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\JADPA18\Desktop\Depreciacion\Domain\obj\Debug\Domain.dll
 C:\Users\JADPA18\Desktop\Depreciacion\Domain\obj\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\bin\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\bin\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\bin\Debug\Guna.UI2.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache

@@ -16,8 +16,8 @@ namespace Domain.Entities
         public String Apellido { get; set; }
         public String Direccion { get; set; }
         public String Telefono { get; set; }
-        public String Email { get;set }
-        public Estado Estado { get; set; }
+        public String Email { get; set; }
+        public EstadoEmpleado Estado { get; set; }
 
     }
 }

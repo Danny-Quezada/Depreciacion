@@ -43,3 +43,13 @@ C:\Users\JADPA18\Desktop\Depreciacion\Infraestructure\obj\Debug\Infraestructure.
 C:\Users\JADPA18\Desktop\Depreciacion\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\JADPA18\Desktop\Depreciacion\Infraestructure\obj\Debug\Infraestructure.dll
 C:\Users\JADPA18\Desktop\Depreciacion\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\bin\Debug\Infraestructure.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\bin\Debug\Infraestructure.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\bin\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\bin\Debug\Guna.UI2.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\bin\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\obj\Debug\Infraestructure.csproj.AssemblyReference.cache
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\obj\Debug\Infraestructure.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\Infraestructure\obj\Debug\Infraestructure.pdb

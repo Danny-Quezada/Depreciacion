@@ -12,7 +12,7 @@ namespace Infraestructure.Repository
     public class BinaryEmpleadoRespository : IEmpleadoModel
     {
         private RAFContext Context;
-        private const int Size = 568;
+        private const int Size = 119; //568
 
         public BinaryEmpleadoRespository()
         {

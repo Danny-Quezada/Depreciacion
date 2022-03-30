@@ -58,7 +58,7 @@ namespace practicaDepreciacion
         {
             if (Seleccionado != -1)
             {
-                FrmUpdate frmUpdate = new FrmUpdate(Seleccionado);
+                FrmUpdate frmUpdate = new FrmUpdate(Seleccionado,1);
                 frmUpdate.services = activoServices;
                 frmUpdate.ShowDialog();
                 FillDgv();
@@ -167,6 +167,32 @@ namespace practicaDepreciacion
                 Seleccionado = -1;
             }
            
+        }
+
+        private void dgvActivos_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dgvActivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvActivos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (e.RowIndex >= 0)
+                {
+                    this.dgvActivos.CurrentCell=this.dgvActivos.Rows[e.RowIndex].Cells[0];
+                    Seleccionado = int.Parse(dgvActivos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                }
+                
+                //this.cmsOption.Show(this.dgvActivos, e.Location);
+                cmsOption.Show(Cursor.Position);
+                
+            }
         }
     }
 }

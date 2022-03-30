@@ -15,22 +15,30 @@ namespace practicaDepreciacion
     public partial class FrmUpdate : Form
     {
         public IActivoServices services { get; set; }
+        public IEmpleadoServices EmpleadoServices { get; set; }
         private int id;
         private Activo Activo;
-        public FrmUpdate(int Id)
+        private Empleado Empleado;
+        private int Opcion;
+        public FrmUpdate(int Id,int opcion)
         {
             InitializeComponent();
             this.id = Id;
+            this.Opcion = opcion;
         }
 
         private void FrmUpdate_Load(object sender, EventArgs e)
         {
+            if (Opcion == 1)
+            {
+                Activo = services.GetById(id);
+                txtNombre.Text = Activo.Nombre;
+                txtValor.Text = Activo.Valor.ToString();
+                txtValorR.Text = Activo.ValorResidual.ToString();
+                txtAU.Text = Activo.VidaUtil.ToString();
+            }
             
-            Activo = services.GetById(id);
-            txtNombre.Text = Activo.Nombre;
-            txtValor.Text = Activo.Valor.ToString();
-            txtValorR.Text = Activo.ValorResidual.ToString();
-            txtAU.Text = Activo.VidaUtil.ToString();
+         
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

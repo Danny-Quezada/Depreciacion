@@ -53,3 +53,15 @@ C:\Users\JADPA18\Desktop\Depreciacion\AppCore\obj\Debug\AppCore.csproj.CoreCompi
 C:\Users\JADPA18\Desktop\Depreciacion\AppCore\obj\Debug\AppCore.csproj.CopyComplete
 C:\Users\JADPA18\Desktop\Depreciacion\AppCore\obj\Debug\AppCore.dll
 C:\Users\JADPA18\Desktop\Depreciacion\AppCore\obj\Debug\AppCore.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\AppCore.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\AppCore.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\Guna.UI2.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\Infraestructure.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\bin\Debug\Infraestructure.pdb
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\obj\Debug\AppCore.csproj.AssemblyReference.cache
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\obj\Debug\AppCore.csproj.CopyComplete
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\obj\Debug\AppCore.dll
+C:\Users\Quezada\Desktop\Emple\Depreciacion\AppCore\obj\Debug\AppCore.pdb
