@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using AppCore.IServices;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace practicaDepreciacion
 {
     public partial class FrmEmpleado : Form
     {
+        public IEmpleadoServices EmpleadoServices { get; set; }
+        public IActivoServices ActivoServices { get; set; }
         public FrmEmpleado()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace practicaDepreciacion
 
         private void FrmEmpleado_Load(object sender, EventArgs e)
         {
+            FillDgv();
             this.cmbEstado.Items.AddRange(Enum.GetValues(typeof(Activo)).Cast<object>().ToArray());
         }
 
@@ -62,6 +66,20 @@ namespace practicaDepreciacion
 
                 MessageBox.Show("NO SE PUEDEN NUMEROS");
 
+            }
+        }
+
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void FillDgv()
+        {
+            dgvEmpleados.Rows.Clear();
+
+            foreach (Empleado empleado in EmpleadoServices.Read())
+            {
+                dgvEmpleados.Rows.Add(empleado.Id,empleado.Nombre,empleado.Cedula,empleado.Apellido,empleado.Direccion,empleado.Telefono,empleado.Email,empleado.Estado);
             }
         }
     }

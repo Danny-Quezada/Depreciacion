@@ -1,5 +1,6 @@
 ﻿using AppCore.IServices;
 using Domain.Entities;
+using Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace practicaDepreciacion
         private void Form1_Load(object sender, EventArgs e)
         {
             FillDgv();
+            this.cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace practicaDepreciacion
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtValor.Text)||string.IsNullOrEmpty(txtValorR.Text)|| string.IsNullOrEmpty(txtAU.Text))
+            if (String.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtValor.Text)||string.IsNullOrEmpty(txtValorR.Text)|| string.IsNullOrEmpty(txtAU.Text)||string.IsNullOrEmpty(txtDescripcion.Text)|| cmbEstado.SelectedIndex==-1)
             {
                 MessageBox.Show("Rellene todo el formulario, por favor.","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
@@ -80,10 +82,13 @@ namespace practicaDepreciacion
             {
                 Activo activo = new Activo
                 {
-                    Nombre=txtNombre.Text,
-                    Valor=double.Parse(txtValor.Text),
-                    ValorResidual=double.Parse(txtValorR.Text),
-                    VidaUtil=int.Parse(txtAU.Text)
+                    Nombre = txtNombre.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Valor = double.Parse(txtValor.Text),
+                    ValorResidual = double.Parse(txtValorR.Text),
+                    VidaUtil = int.Parse(txtAU.Text),
+                    IdEmpleado = -1,
+                    Estado = (EstadoActivo)cmbEstado.SelectedIndex,
                 };
                 activoServices.Add(activo);
                 FillDgv();
@@ -105,7 +110,7 @@ namespace practicaDepreciacion
 
             foreach(Activo activo in activoServices.Read())
             {
-                dgvActivos.Rows.Add(activo.Id,activo.Nombre,activo.Valor,activo.ValorResidual,activo.VidaUtil);
+                dgvActivos.Rows.Add(activo.Id,activo.Nombre,activo.Descripcion,activo.Estado,activo.Valor,activo.ValorResidual,activo.VidaUtil);
             }
         }
 
@@ -187,12 +192,25 @@ namespace practicaDepreciacion
                 {
                     this.dgvActivos.CurrentCell=this.dgvActivos.Rows[e.RowIndex].Cells[0];
                     Seleccionado = int.Parse(dgvActivos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    if (activoServices.GetById(Seleccionado).IdEmpleado >-1)
+                    {
+                        this.cmsOption.Items[3].Available = false;
+                    }
+                    else
+                    {
+                        this.cmsOption.Items[3].Enabled = true;
+                    }
                 }
                 
                 //this.cmsOption.Show(this.dgvActivos, e.Location);
                 cmsOption.Show(Cursor.Position);
                 
             }
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

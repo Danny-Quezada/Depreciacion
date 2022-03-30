@@ -29,3 +29,11 @@ C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.csproj.CopyC
 C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.dll
 C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.pdb
 C:\Users\Quezada\Desktop\Emple\Depreciacion\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\bin\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\bin\Debug\Domain.pdb
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\bin\Debug\Guna.UI2.dll
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\obj\Debug\Domain.dll
+C:\Users\Quezada\Desktop\Trabajo\Depreciacion\Domain\obj\Debug\Domain.pdb

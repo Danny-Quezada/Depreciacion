@@ -15,7 +15,7 @@ namespace Infraestructure.Repository
         private const int SIZE = 330;
         public BinaryActivoRepository()
         {
-            context = new RAFContext("activo", 119);
+            context = new RAFContext("activo", SIZE);
         }
         public void Add(Activo t)
         {

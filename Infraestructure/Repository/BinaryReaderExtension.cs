@@ -15,6 +15,7 @@ namespace Infraestructure.Repository
 
             switch (typeCode)
             {
+               
                 case TypeCode.Boolean: { return br.ReadBoolean(); }
                 case TypeCode.Byte: { return br.ReadByte(); }
                 case TypeCode.Char: { return br.ReadChar(); }

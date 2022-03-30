@@ -72,45 +72,56 @@ namespace Infraestructure.Repository
                             {
                                 continue;
                             }
-
+                           
                             if (pinfo.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
                             {
                                 bwData.Write(++k);
                                 continue;
                             }
-
+                            
                             if (type == typeof(int))
                             {
                                 bwData.Write((int)obj);
+                                continue;
                             }
                             else if (type == typeof(long))
                             {
+
                                 bwData.Write((long)obj);
+                                continue;
                             }
                             else if (type == typeof(float))
                             {
                                 bwData.Write((float)obj);
+                                continue;
                             }
                             else if (type == typeof(double))
                             {
                                 bwData.Write((double)obj);
+                                continue;
                             }
                             else if (type == typeof(decimal))
                             {
                                 bwData.Write((decimal)obj);
+                                continue;
                             }
                             else if (type == typeof(char))
                             {
                                 bwData.Write((char)obj);
+                                continue;
                             }
                             else if (type == typeof(bool))
                             {
                                 bwData.Write((bool)obj);
+                                continue;
                             }
                             else if (type == typeof(string))
                             {
                                 bwData.Write((string)obj);
+                                continue;
                             }
+                            int nj = (int)obj;
+                            bwData.Write((int)obj);
                         }
 
                         long posh = 8 + n * 4;
@@ -172,39 +183,48 @@ namespace Infraestructure.Repository
                         {
                             continue;
                         }
-
+                       
                         if (type == typeof(int))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<int>(TypeCode.Int32));
+                            continue;
                         }
                         else if (type == typeof(long))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<long>(TypeCode.Int64));
+                            continue;
                         }
                         else if (type == typeof(float))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<float>(TypeCode.Single));
+                            continue;
                         }
                         else if (type == typeof(double))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<double>(TypeCode.Double));
+                            continue;
                         }
                         else if (type == typeof(decimal))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<decimal>(TypeCode.Decimal));
+                            continue;
                         }
                         else if (type == typeof(char))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<char>(TypeCode.Char));
+                            continue;
                         }
                         else if (type == typeof(bool))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<bool>(TypeCode.Boolean));
+                            continue;
                         }
                         else if (type == typeof(string))
                         {
                             pinfo.SetValue(newValue, brData.GetValue<string>(TypeCode.String));
+                            continue;
                         }
+                        pinfo.SetValue(newValue, brData.GetValue<int>(TypeCode.Int32));
                     }
 
 

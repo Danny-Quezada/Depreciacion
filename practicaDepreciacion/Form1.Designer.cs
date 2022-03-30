@@ -39,11 +39,6 @@
             this.txtValorR = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtValor = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvActivos = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ActivoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorResidual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsOption = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.depreciacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +49,16 @@
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnEnviar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
+            this.cmbEstado = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtDescripcion = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ActivoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorResidual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agregarleUnEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).BeginInit();
             this.cmsOption.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +76,7 @@
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(12, 144);
+            this.txtNombre.Location = new System.Drawing.Point(11, 111);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "Nombre";
@@ -93,7 +98,7 @@
             this.txtAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtAU.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAU.Location = new System.Drawing.Point(12, 349);
+            this.txtAU.Location = new System.Drawing.Point(12, 433);
             this.txtAU.Name = "txtAU";
             this.txtAU.PasswordChar = '\0';
             this.txtAU.PlaceholderText = "Años útil";
@@ -115,7 +120,7 @@
             this.txtValorR.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtValorR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValorR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValorR.Location = new System.Drawing.Point(12, 272);
+            this.txtValorR.Location = new System.Drawing.Point(12, 376);
             this.txtValorR.Name = "txtValorR";
             this.txtValorR.PasswordChar = '\0';
             this.txtValorR.PlaceholderText = "Valor residual";
@@ -137,7 +142,7 @@
             this.txtValor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.txtValor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValor.Location = new System.Drawing.Point(12, 205);
+            this.txtValor.Location = new System.Drawing.Point(12, 323);
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
             this.txtValor.PlaceholderText = "Valor";
@@ -173,6 +178,8 @@
             this.dgvActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ActivoId,
             this.Nombre,
+            this.Descripcion,
+            this.Estado,
             this.Valor,
             this.ValorResidual,
             this.Age});
@@ -197,7 +204,7 @@
             this.dgvActivos.RowTemplate.DividerHeight = 2;
             this.dgvActivos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvActivos.Size = new System.Drawing.Size(602, 472);
+            this.dgvActivos.Size = new System.Drawing.Size(602, 524);
             this.dgvActivos.TabIndex = 6;
             this.dgvActivos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvActivos.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -225,43 +232,6 @@
             this.dgvActivos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvActivos_CellMouseClick);
             this.dgvActivos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvActivos_MouseClick);
             // 
-            // ActivoId
-            // 
-            this.ActivoId.FillWeight = 60F;
-            this.ActivoId.HeaderText = "ID";
-            this.ActivoId.MinimumWidth = 6;
-            this.ActivoId.Name = "ActivoId";
-            this.ActivoId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 150F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.MinimumWidth = 6;
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // ValorResidual
-            // 
-            this.ValorResidual.HeaderText = "Valor residual";
-            this.ValorResidual.MinimumWidth = 6;
-            this.ValorResidual.Name = "ValorResidual";
-            this.ValorResidual.ReadOnly = true;
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Años";
-            this.Age.MinimumWidth = 6;
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            // 
             // cmsOption
             // 
             this.cmsOption.BackColor = System.Drawing.Color.White;
@@ -269,7 +239,8 @@
             this.cmsOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.depreciacionesToolStripMenuItem,
             this.actualizarToolStripMenuItem,
-            this.borrarToolStripMenuItem});
+            this.borrarToolStripMenuItem,
+            this.agregarleUnEmpleadoToolStripMenuItem});
             this.cmsOption.Name = "cmsOption";
             this.cmsOption.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.cmsOption.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
@@ -280,7 +251,7 @@
             this.cmsOption.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsOption.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.cmsOption.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.cmsOption.Size = new System.Drawing.Size(155, 70);
+            this.cmsOption.Size = new System.Drawing.Size(199, 92);
             // 
             // depreciacionesToolStripMenuItem
             // 
@@ -369,7 +340,7 @@
             this.btnEnviar.FillColor = System.Drawing.Color.Transparent;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEnviar.ForeColor = System.Drawing.Color.Silver;
-            this.btnEnviar.Location = new System.Drawing.Point(23, 464);
+            this.btnEnviar.Location = new System.Drawing.Point(26, 536);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.PressedColor = System.Drawing.Color.Transparent;
             this.btnEnviar.Size = new System.Drawing.Size(139, 46);
@@ -384,12 +355,111 @@
         System.Drawing.Color.Blue,
         System.Drawing.Color.Orange};
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.BackColor = System.Drawing.Color.Transparent;
+            this.cmbEstado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.cmbEstado.BorderRadius = 13;
+            this.cmbEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstado.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbEstado.ItemHeight = 30;
+            this.cmbEstado.Location = new System.Drawing.Point(12, 484);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(181, 36);
+            this.cmbEstado.TabIndex = 10;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Animated = true;
+            this.txtDescripcion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.txtDescripcion.BorderRadius = 13;
+            this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescripcion.DefaultText = "";
+            this.txtDescripcion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescripcion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescripcion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescripcion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescripcion.Font = new System.Drawing.Font("Cascadia Code", 9F);
+            this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 153);
+            this.txtDescripcion.MaxLength = 100;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.PasswordChar = '\0';
+            this.txtDescripcion.PlaceholderText = "Descripcion";
+            this.txtDescripcion.SelectedText = "";
+            this.txtDescripcion.Size = new System.Drawing.Size(180, 164);
+            this.txtDescripcion.TabIndex = 11;
+            // 
+            // ActivoId
+            // 
+            this.ActivoId.FillWeight = 60F;
+            this.ActivoId.HeaderText = "ID";
+            this.ActivoId.MinimumWidth = 6;
+            this.ActivoId.Name = "ActivoId";
+            this.ActivoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 150F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // ValorResidual
+            // 
+            this.ValorResidual.HeaderText = "Valor residual";
+            this.ValorResidual.MinimumWidth = 6;
+            this.ValorResidual.Name = "ValorResidual";
+            this.ValorResidual.ReadOnly = true;
+            // 
+            // Age
+            // 
+            this.Age.HeaderText = "Años";
+            this.Age.MinimumWidth = 6;
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            // 
+            // agregarleUnEmpleadoToolStripMenuItem
+            // 
+            this.agregarleUnEmpleadoToolStripMenuItem.Name = "agregarleUnEmpleadoToolStripMenuItem";
+            this.agregarleUnEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.agregarleUnEmpleadoToolStripMenuItem.Text = "Agregarle un empleado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(842, 542);
+            this.ClientSize = new System.Drawing.Size(842, 594);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.guna2ImageButton2);
             this.Controls.Add(this.guna2ImageButton1);
@@ -418,11 +488,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvActivos;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActivoId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorResidual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2Button btnEnviar;
@@ -431,6 +496,16 @@
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2ColorTransition guna2ColorTransition1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbEstado;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorResidual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private System.Windows.Forms.ToolStripMenuItem agregarleUnEmpleadoToolStripMenuItem;
     }
 }
 
